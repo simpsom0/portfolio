@@ -1,0 +1,12 @@
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .description {
+    background-color: light-dark(lightgrey, grey);
+    width: 67%;
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
+}

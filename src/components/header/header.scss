@@ -1,0 +1,23 @@
+.links {
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    padding: 4px;
+    #linkedin {
+      padding-left: 0;
+    }
+
+    svg {
+      fill: light-dark(black, white);
+      width: 33px;
+      height: 33px;
+    }
+    svg:hover {
+      fill: light-dark(grey, darkgrey);
+    }
+    svg:active {
+      fill: light-dark(darkgrey, grey);
+    }
+  }
+}
