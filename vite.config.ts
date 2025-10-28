@@ -9,8 +9,14 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@assets': path.resolve(__dirname, './src/assets'),
-      '@components': path.resolve(__dirname, './src/components'),
+      '@assets': path.resolve(
+        path.dirname(new URL(import.meta.url).pathname),
+        './src/assets'
+      ),
+      '@components': path.resolve(
+        path.dirname(new URL(import.meta.url).pathname),
+        './src/components'
+      ),
     },
   },
   test: {
