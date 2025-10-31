@@ -10,12 +10,19 @@ export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.strictTypeChecked,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+      'prettier': eslintPluginPrettierRecommended.plugins.prettier
+    },
+    rules: {
+      ...js.configs.recommended.rules,
+      ...tseslint.configs.strictTypeChecked.rules,
+      ...reactHooks.configs['recommended-latest'].rules,
+      ...reactRefresh.configs.vite.rules,
+      ...eslintPluginPrettierRecommended.rules,
+    },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -27,5 +34,4 @@ export default defineConfig([
       },
     },
   },
-  eslintPluginPrettierRecommended,
 ]);
