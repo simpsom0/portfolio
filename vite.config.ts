@@ -17,6 +17,10 @@ export default defineConfig({
         path.dirname(new URL(import.meta.url).pathname),
         './src/components'
       ),
+      '@helpers': path.resolve(
+        path.dirname(new URL(import.meta.url).pathname),
+        './src/helpers'
+      ),
     },
   },
   test: {
