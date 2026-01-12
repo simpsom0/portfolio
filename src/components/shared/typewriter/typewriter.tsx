@@ -13,7 +13,6 @@ export type HeadingLevelType = (typeof HeadingLevel)[keyof typeof HeadingLevel];
 export interface TypewriterState {
   text: string;
   headingLevel: HeadingLevelType;
-  allowUserInput: boolean;
   isRendered: boolean;
   isRendering: boolean;
 }
@@ -61,7 +60,7 @@ function Typewriter({ state, onComplete }: TypewriterProps) {
   const renderContent = () => {
     const content = (
       <>
-        <span className="keepWhiteSpace">{textVisible}</span>
+        {textVisible}
         <Cursor
           render={state.isRendering}
           blink={state.isRendered && state.isRendering}

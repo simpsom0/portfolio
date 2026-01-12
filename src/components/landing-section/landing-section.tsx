@@ -21,21 +21,18 @@ const initialState: LandingState = {
   greeting: {
     headingLevel: HeadingLevel.Paragraph,
     text: 'Hello, my name is',
-    allowUserInput: false,
     isRendering: true,
     isRendered: false,
   },
   name: {
     headingLevel: HeadingLevel.H2,
     text: 'Michael Simpson',
-    allowUserInput: false,
     isRendering: false,
     isRendered: false,
   },
   hook: {
     headingLevel: HeadingLevel.Paragraph,
     text: "I'm a Software Developer focused on solving problems.",
-    allowUserInput: true,
     isRendering: false,
     isRendered: false,
   },
