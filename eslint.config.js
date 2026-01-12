@@ -22,6 +22,8 @@ export default defineConfig([
       ...reactHooks.configs['recommended-latest'].rules,
       ...reactRefresh.configs.vite.rules,
       ...eslintPluginPrettierRecommended.rules,
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["error"]
     },
     languageOptions: {
       ecmaVersion: 2020,
