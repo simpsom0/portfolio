@@ -22,13 +22,15 @@ export default defineConfig([
       ...reactHooks.configs['recommended-latest'].rules,
       ...reactRefresh.configs.vite.rules,
       ...eslintPluginPrettierRecommended.rules,
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["error"]
     },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
       parser: tseslint.parser,
       parserOptions: {
-        project: './tsconfig.json',
+        // project: './tsconfig.json',
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
