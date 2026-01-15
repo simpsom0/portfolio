@@ -15,6 +15,7 @@ export interface TypewriterState {
   headingLevel: HeadingLevelType;
   isRendered: boolean;
   isRendering: boolean;
+  typingDelayMs?: number;
 }
 
 export interface TypewriterProps {
@@ -23,34 +24,36 @@ export interface TypewriterProps {
 }
 
 function Typewriter({ state, onComplete }: TypewriterProps) {
-  // originally used Math.Random() to mimic
-  // real typing but it came out jittery
-  const typingDelayMs = 18;
-  const punctuationDelayMs = 500;
+  const defaultTypingDelayMs: number = 18;
   const punctuation = '.,';
 
   const timerId = useRef<number | null>(null);
-  const [textVisible, setTextVisible] = useState(
-    state.isRendered ? state.text : ''
-  );
+  const [textVisible, setTextVisible] = useState(() => {
+    if (state.isRendered) return state.text;
+    if (state.typingDelayMs === 0 && state.isRendering) return state.text;
+    return '';
+  });
 
   // progressively sets textVisible to state.text
   useEffect(() => {
     if (!state.isRendering || state.isRendered) {
       return;
     } else if (textVisible.length >= state.text.length) {
-      if (onComplete) onComplete();
+      onComplete?.();
       return;
     }
 
+    // originally used Math.Random() to mimic
+    // real typing but it came out jittery
+    const typingDelayMs = state.typingDelayMs ?? defaultTypingDelayMs;
     const lastCharAdded = textVisible[textVisible.length - 1];
-    const timeout = punctuation.includes(lastCharAdded)
-      ? punctuationDelayMs
+    const timeoutMs = punctuation.includes(lastCharAdded)
+      ? typingDelayMs * 25
       : typingDelayMs;
 
     timerId.current = window.setTimeout(() => {
       setTextVisible((current) => current + state.text[current.length]);
-    }, timeout);
+    }, timeoutMs);
 
     return () => {
       if (timerId.current) clearTimeout(timerId.current);
