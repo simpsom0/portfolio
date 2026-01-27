@@ -1,0 +1,15 @@
+button {
+  background-color: var(--bg-color);
+  cursor: pointer;
+  border-color: transparent;
+  border-radius: 0.25rem;
+  stroke: var(--text-color);
+  padding: 0.25rem;
+  margin: 0.25rem;
+
+  &:hover {
+    background-color: var(--on-hover-bg);
+    stroke: var(--accent);
+    fill: var(--accent);
+  }
+}

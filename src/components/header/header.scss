@@ -1,23 +1,34 @@
-.links {
+.header {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 
-  a {
-    padding: 4px;
-    #linkedin {
-      padding-left: 0;
-    }
+  .divider {
+    background-color: var(--text-color);
+    height: 1.5rem;
+    width: 2px;
+    margin: 0 0.5rem;
+  }
 
-    svg {
-      fill: light-dark(black, white);
-      width: 33px;
-      height: 33px;
-    }
-    svg:hover {
-      fill: light-dark(grey, darkgrey);
-    }
-    svg:active {
-      fill: light-dark(darkgrey, grey);
+  .links {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      padding: 0.25rem;
+      #linkedin {
+        padding-left: 0;
+      }
+
+      svg {
+        fill: var(--accent);
+        width: 2rem;
+        height: 2rem;
+
+        &:hover {
+          fill: color-mix(in srgb, var(--accent) 100%, var(--bg-color) 20%);
+        }
+      }
     }
   }
 }
