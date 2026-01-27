@@ -1,0 +1,6 @@
+.icon {
+  // renders svg's as block instead of inline
+  // stops extra padding from being added on bottom
+  // (reserved for some characters: yjpgq, etc)
+  display: block;
+}
