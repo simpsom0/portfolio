@@ -11,7 +11,7 @@
 }
 
 .solid {
-  background-color: white;
+  background-color: var(--text-color);
   animation: none;
 }
 
@@ -25,7 +25,7 @@
   }
 
   50% {
-    background-color: white;
+    background-color: var(--text-color);
   }
 
   100% {

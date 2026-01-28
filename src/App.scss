@@ -1,0 +1,15 @@
+.icon {
+  // renders svg's as block instead of inline
+  // stops extra padding from being added on bottom
+  // (reserved for some characters: yjpgq, etc)
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Montserrat;
+}

@@ -1,5 +1,37 @@
+@font-face {
+  font-family: Montserrat;
+  src: url('./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf')
+    format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url('./assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf')
+    format('truetype');
+  font-style: italic;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url('./assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf')
+    format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url('./assets/fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf')
+    format('truetype');
+  font-style: italic;
+  font-weight: 100 900;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -9,4 +41,36 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --black: #2e2e2e;
+  --white: #ffffff;
+  --grey: #f4f4f4;
+  --blue: #4a90e2;
+  --accent: var(--blue);
+
+  &.light {
+    --bg-color: var(--white);
+    --text-color: var(--black);
+    --on-hover-bg: color-mix(in srgb, var(--bg-color) 100%, var(--accent) 20%);
+  }
+
+  &.dark {
+    --bg-color: var(--black);
+    --text-color: var(--white);
+    --on-hover-bg: color-mix(in srgb, var(--bg-color) 100%, var(--accent) 10%);
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  --transition-speed-ms: 200ms;
+  &.transitions-enabled {
+    transition:
+      background-color var(--transition-speed-ms) ease,
+      color var(--transition-speed-ms) ease,
+      stroke var(--transition-speed-ms) ease,
+      fill var(--transition-speed-ms) ease;
+  }
 }
