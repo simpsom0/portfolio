@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { ThemeProviderContext } from '@/components/shared/theme/use-theme';
+import { ThemeProviderContext } from '@/hooks/theme/use-theme';
 
 type Theme = 'dark' | 'light' | 'system';
 
