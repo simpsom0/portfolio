@@ -4,6 +4,8 @@ import LandingSection from '@/features/landing-section/landing-section';
 import ThemeButton from '@/components/theme-button/theme-button';
 import { GithubIcon } from '@/features/tech-stack/components/icons/etc/github';
 import { LinkedinIcon } from '@/features/tech-stack/components/icons/etc/linkedin';
+import TechStack from '@/features/tech-stack/tech-stack';
+import IconActivityProvider from '@/hooks/icon-activity/icon-activity-provider';
 
 function App() {
   return (
@@ -29,6 +31,11 @@ function App() {
       {/* body */}
       <div className="body-container">
         <LandingSection />
+        <IconActivityProvider>
+          <div className="experience-container">
+            <TechStack />
+          </div>
+        </IconActivityProvider>
       </div>
     </ThemeProvider>
   );

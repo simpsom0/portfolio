@@ -1,0 +1,30 @@
+.techstack-container {
+  display: flex;
+  gap: 0.5em;
+  margin-right: 0.5em;
+
+  .techstack-col {
+    &#col-1 {
+      margin-top: 1em;
+    }
+  }
+
+  svg {
+    height: 2em;
+    width: 2em;
+    fill: var(--text-color);
+    padding: 0.25em;
+    transition:
+      translate 0.2s ease-in-out,
+      fill 0.2s ease-in-out;
+
+    &:hover {
+      fill: var(--accent);
+    }
+  }
+
+  .active svg {
+    translate: -0.5em;
+    fill: var(--accent);
+  }
+}
