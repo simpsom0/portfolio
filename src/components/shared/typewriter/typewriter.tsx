@@ -1,7 +1,7 @@
 import './typewriter.scss';
-import Cursor from '@components/shared/cursor/cursor';
 import { useState, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
+import Cursor from '@/components/shared/cursor/cursor';
 
 export const HeadingLevel = {
   H2: 0,

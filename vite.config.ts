@@ -10,17 +10,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@assets': path.resolve(
+      '@': path.resolve(
         path.dirname(new URL(import.meta.url).pathname),
-        './src/assets'
-      ),
-      '@components': path.resolve(
-        path.dirname(new URL(import.meta.url).pathname),
-        './src/components'
-      ),
-      '@helpers': path.resolve(
-        path.dirname(new URL(import.meta.url).pathname),
-        './src/helpers'
+        './src'
       ),
     },
   },

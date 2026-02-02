@@ -1,5 +1,5 @@
 import './body.scss';
-import LandingSection from '@components/landing-section/landing-section';
+import LandingSection from '@/components/landing-section/landing-section';
 
 function Body() {
   return (

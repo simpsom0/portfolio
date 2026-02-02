@@ -1,5 +1,5 @@
-import { useTheme } from '../use-theme';
 import './theme-button.scss';
+import { useTheme } from '@/components/shared/theme/use-theme';
 
 const Sun = () => {
   return (
