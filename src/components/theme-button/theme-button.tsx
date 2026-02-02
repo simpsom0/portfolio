@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import './theme-button.scss';
-import { useTheme } from '@/components/shared/theme/use-theme';
+import { useTheme } from '@/hooks/theme/use-theme';
 
 const Sun = () => {
   return (

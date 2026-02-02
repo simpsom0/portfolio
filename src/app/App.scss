@@ -1,4 +1,26 @@
-.header {
+.icon {
+  // renders svg's as block instead of inline
+  // stops extra padding from being added on bottom
+  // (reserved for some characters: yjpgq, etc)
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Montserrat;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -16,6 +38,7 @@
 
     a {
       padding: 0.25rem;
+
       #linkedin {
         padding-left: 0;
       }
