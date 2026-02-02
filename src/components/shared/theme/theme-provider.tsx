@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { ThemeProviderContext } from './use-theme';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { ThemeProviderContext } from '@/components/shared/theme/use-theme';
 
 type Theme = 'dark' | 'light' | 'system';
 
@@ -44,13 +44,18 @@ function ThemeProvider({ children }: React.PropsWithChildren) {
     };
   }, []);
 
-  const themeContextValue: ThemeProviderState = {
-    theme: internalTheme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setInternalTheme(theme);
-    },
-  };
+  const setTheme = useCallback((theme: Theme) => {
+    localStorage.setItem(storageKey, theme);
+    setInternalTheme(theme);
+  }, []);
+
+  const themeContextValue: ThemeProviderState = useMemo(
+    () => ({
+      theme: internalTheme,
+      setTheme,
+    }),
+    [internalTheme, setTheme]
+  );
 
   return (
     <ThemeProviderContext.Provider value={themeContextValue}>
