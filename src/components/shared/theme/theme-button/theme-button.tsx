@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import './theme-button.scss';
 import { useTheme } from '@/components/shared/theme/use-theme';
 
@@ -47,10 +48,10 @@ const Moon = () => {
 function ThemeButton() {
   const { theme, setTheme } = useTheme();
 
-  const invertTheme = () => {
+  const invertTheme = useCallback(() => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
-  };
+  }, [theme, setTheme]);
 
   const icon = theme === 'dark' ? <Moon /> : <Sun />;
 

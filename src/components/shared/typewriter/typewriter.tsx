@@ -23,10 +23,10 @@ export interface TypewriterProps {
   onComplete?: () => void;
 }
 
-function Typewriter({ state, onComplete }: TypewriterProps) {
-  const defaultTypingDelayMs: number = 18;
-  const punctuation = '.,';
+const defaultTypingDelayMs: number = 18;
+const punctuation = '.,';
 
+function Typewriter({ state, onComplete }: TypewriterProps) {
   const timerId = useRef<number | null>(null);
   const [textVisible, setTextVisible] = useState(() => {
     if (state.isRendered) return state.text;
