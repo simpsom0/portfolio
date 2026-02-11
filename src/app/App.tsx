@@ -2,10 +2,9 @@ import './App.scss';
 import ThemeProvider from '@/hooks/theme/theme-provider';
 import LandingSection from '@/features/landing-section/landing-section';
 import ThemeButton from '@/components/theme-button/theme-button';
-import { GithubIcon } from '@/features/tech-stack/components/icons/etc/github';
-import { LinkedinIcon } from '@/features/tech-stack/components/icons/etc/linkedin';
-import TechStack from '@/features/tech-stack/tech-stack';
-import IconActivityProvider from '@/hooks/icon-activity/icon-activity-provider';
+import Experience from '@/features/experience-section/experience-section';
+import { GithubIcon } from '@/types/icons/svgs/etc/github';
+import { LinkedinIcon } from '@/types/icons/svgs/etc/linkedin';
 
 function App() {
   return (
@@ -31,11 +30,12 @@ function App() {
       {/* body */}
       <div className="body-container">
         <LandingSection />
-        <IconActivityProvider>
-          <div className="experience-container">
-            <TechStack />
+        <div className="experience-container">
+          <h2 className="title">Experience</h2>
+          <div className="experience-body">
+            <Experience />
           </div>
-        </IconActivityProvider>
+        </div>
       </div>
     </ThemeProvider>
   );

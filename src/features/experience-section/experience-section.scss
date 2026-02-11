@@ -1,0 +1,10 @@
+.experience-section {
+  display: flex;
+
+  .experiences {
+    .timeline-section {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+    }
+  }
+}

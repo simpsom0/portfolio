@@ -1,0 +1,29 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.25rem 0.25rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--text-color);
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  background-color: var(--bg-color);
+
+  .tag-icon {
+    padding-right: 0.25rem;
+
+    svg {
+      width: 0.8rem;
+      height: 0.8rem;
+      fill: var(--text-color);
+    }
+  }
+
+  &.active {
+    color: var(--accent);
+    border-color: var(--accent);
+
+    svg {
+      fill: var(--accent);
+    }
+  }
+}

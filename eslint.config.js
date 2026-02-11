@@ -14,7 +14,7 @@ export default defineConfig([
       '@typescript-eslint': tseslint.plugin,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      'prettier': eslintPluginPrettierRecommended.plugins.prettier
+      prettier: eslintPluginPrettierRecommended.plugins.prettier,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -22,8 +22,8 @@ export default defineConfig([
       ...reactHooks.configs['recommended-latest'].rules,
       ...reactRefresh.configs.vite.rules,
       ...eslintPluginPrettierRecommended.rules,
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": ["error"]
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['error'],
     },
     languageOptions: {
       ecmaVersion: 2020,

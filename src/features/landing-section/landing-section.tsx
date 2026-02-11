@@ -4,7 +4,7 @@ import Typewriter, {
   type TypewriterState,
 } from '@/features/landing-section/components/typewriter/typewriter';
 import './landing-section.scss';
-import { useCallback, useReducer } from 'react';
+import { useMemo, useReducer } from 'react';
 
 type LandingAction =
   | { type: 'COMPLETE_GREETING' }
@@ -68,23 +68,29 @@ function landingReducer(
 function LandingSection() {
   const [state, dispatch] = useReducer(landingReducer, initialState);
 
-  const handleGreetingComplete = useCallback(async () => {
-    await delayExecutionMs(() => dispatch({ type: 'COMPLETE_GREETING' }), 0);
-  }, []);
-
-  const handleNameComplete = useCallback(async () => {
-    await delayExecutionMs(() => dispatch({ type: 'COMPLETE_NAME' }));
-  }, []);
-
-  const handleHookComplete = useCallback(async () => {
-    await delayExecutionMs(() => dispatch({ type: 'COMPLETE_HOOK' }));
-  }, []);
+  const callbacks = useMemo(
+    () => ({
+      greeting: async () => {
+        await delayExecutionMs(
+          () => dispatch({ type: 'COMPLETE_GREETING' }),
+          0
+        );
+      },
+      name: async () => {
+        await delayExecutionMs(() => dispatch({ type: 'COMPLETE_NAME' }));
+      },
+      hook: async () => {
+        await delayExecutionMs(() => dispatch({ type: 'COMPLETE_HOOK' }));
+      },
+    }),
+    []
+  );
 
   return (
     <div className="landing-section">
-      <Typewriter state={state.greeting} onComplete={handleGreetingComplete} />
-      <Typewriter state={state.name} onComplete={handleNameComplete} />
-      <Typewriter state={state.hook} onComplete={handleHookComplete} />
+      <Typewriter state={state.greeting} onComplete={callbacks.greeting} />
+      <Typewriter state={state.name} onComplete={callbacks.name} />
+      <Typewriter state={state.hook} onComplete={callbacks.hook} />
     </div>
   );
 }
