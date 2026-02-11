@@ -1,0 +1,25 @@
+.timeline {
+  --timeline-width: 0.125rem;
+
+  height: 100%;
+  width: var(--timeline-width);
+  margin-left: 2rem;
+  background-color: var(--text-color);
+
+  --marker-diameter: 1rem;
+  --marker-border-width: var(--timeline-width);
+
+  .marker {
+    box-sizing: border-box;
+    width: var(--marker-diameter);
+    height: var(--marker-diameter);
+
+    position: relative;
+    right: calc((var(--marker-diameter) - var(--timeline-width)) / 2);
+    top: 1.6rem;
+
+    background-color: var(--bg-color);
+    border: var(--marker-border-width) solid var(--text-color);
+    border-radius: calc(var(--marker-diameter) / 2);
+  }
+}
