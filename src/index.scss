@@ -48,6 +48,8 @@
   --blue: #4a90e2;
   --accent: var(--blue);
 
+  --card-bg: color-mix(in srgb, var(--bg-color) 100%, var(--text-color) 3%);
+
   &.light {
     --bg-color: var(--white);
     --text-color: var(--black);
