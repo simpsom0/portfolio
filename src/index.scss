@@ -64,13 +64,16 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+}
 
+.transitions-enabled {
   --transition-speed-ms: 200ms;
-  &.transitions-enabled {
-    transition:
-      background-color var(--transition-speed-ms) ease,
-      color var(--transition-speed-ms) ease,
-      stroke var(--transition-speed-ms) ease,
-      fill var(--transition-speed-ms) ease;
-  }
+
+  transition:
+    background-color var(--transition-speed-ms) ease,
+    color var(--transition-speed-ms) ease,
+    border-color var(--transition-speed-ms) ease,
+    stroke var(--transition-speed-ms) ease,
+    translate var(--transition-speed-ms) ease,
+    fill var(--transition-speed-ms) ease;
 }
