@@ -122,9 +122,9 @@ function Experience() {
   return (
     <div className="experience-section">
       <div className="experiences">
-        {getTypedKeys(experiences).map((expEnum) => (
+        {getTypedKeys(experiences).map((expEnum, i) => (
           <div className="timeline-section" key={expEnum}>
-            <Timeline />
+            <Timeline index={i} />
             <ExperienceCard state={experiences[expEnum]} />
           </div>
         ))}
