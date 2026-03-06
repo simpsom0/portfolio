@@ -2,13 +2,7 @@ import './typewriter.scss';
 import { useState, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import Cursor from '@/features/landing-section/components/cursor/cursor';
-
-export const HeadingLevel = {
-  H2: 0,
-  Paragraph: 1,
-  Span: 2,
-} as const;
-export type HeadingLevelType = (typeof HeadingLevel)[keyof typeof HeadingLevel];
+import { type HeadingLevelType, HeadingLevel } from '@/types/heading-level';
 
 export interface TypewriterState {
   text: string;

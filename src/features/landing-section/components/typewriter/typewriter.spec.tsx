@@ -1,7 +1,8 @@
 import 'vitest/browser'; // needed for toBeInTheDocument()
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import Typewriter, { HeadingLevel, type TypewriterState } from './typewriter';
+import Typewriter, { type TypewriterState } from './typewriter';
 import { render, waitFor } from '@testing-library/react';
+import { HeadingLevel } from '@/types/heading-level';
 
 describe('Typewriter Component', () => {
   const mockOnComplete = vi.fn();

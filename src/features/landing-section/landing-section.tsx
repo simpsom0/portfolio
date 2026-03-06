@@ -1,10 +1,10 @@
 import { delayExecutionMs } from '@/utils/delay-execution';
 import Typewriter, {
-  HeadingLevel,
   type TypewriterState,
 } from '@/features/landing-section/components/typewriter/typewriter';
 import './landing-section.scss';
 import { useMemo, useReducer } from 'react';
+import { HeadingLevel } from '@/types/heading-level';
 
 type LandingAction =
   | { type: 'COMPLETE_GREETING' }
