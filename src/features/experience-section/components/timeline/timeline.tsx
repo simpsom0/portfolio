@@ -1,14 +1,13 @@
 import './timeline.scss';
 
 type TimelineProps = {
-  index: number;
+  className: string;
 };
 
-function Timeline({ index }: TimelineProps) {
+function Timeline({ className }: TimelineProps) {
   return (
-    <div className={`timeline ${index === 0 ? 'first' : ''}`}>
+    <div className={`timeline ${className}`}>
       <div className="section">
-        <div className="line"></div>
         <div className="marker"></div>
       </div>
     </div>

@@ -122,12 +122,18 @@ function Experience() {
   return (
     <div className="experience-section">
       <div className="experiences">
-        {getTypedKeys(experiences).map((expEnum, i) => (
-          <div className="timeline-section" key={expEnum}>
-            <Timeline index={i} />
-            <ExperienceCard state={experiences[expEnum]} />
-          </div>
-        ))}
+        {getTypedKeys(experiences).map((expEnum, i, arr) => {
+          const timelineClasses: string[] = [
+            `${i === 0 ? 'first' : ''}`,
+            `${i === arr.length - 1 ? 'last' : ''}`,
+          ];
+          return (
+            <div className="timeline-section" key={expEnum}>
+              <Timeline className={timelineClasses.join(' ')} />
+              <ExperienceCard state={experiences[expEnum]} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
