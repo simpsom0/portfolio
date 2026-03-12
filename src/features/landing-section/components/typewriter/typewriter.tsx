@@ -57,7 +57,8 @@ function Typewriter({ state, onComplete }: TypewriterProps) {
   const renderContent = () => {
     const content = (
       <>
-        {textVisible}
+        {/* use a non-breaking space to make the empty tags take up space */}
+        {textVisible === '' ? '\u00A0' : textVisible}
         <Cursor
           render={state.isRendering}
           blink={state.isRendered && state.isRendering}
@@ -66,15 +67,15 @@ function Typewriter({ state, onComplete }: TypewriterProps) {
     );
 
     const elementMap: Record<HeadingLevelType, ReactNode> = {
-      [HeadingLevel.H2]: <h2>{content}</h2>,
-      [HeadingLevel.Paragraph]: <p>{content}</p>,
-      [HeadingLevel.Span]: <span>{content}</span>,
+      [HeadingLevel.H2]: <h2 className="h2">{content}</h2>,
+      [HeadingLevel.Paragraph]: <p className="p">{content}</p>,
+      [HeadingLevel.Span]: <span className="span">{content}</span>,
     };
 
     return elementMap[state.headingLevel];
   };
 
-  return <div>{renderContent()}</div>;
+  return renderContent();
 }
 
 export default Typewriter;
