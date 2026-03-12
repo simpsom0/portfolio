@@ -1,7 +1,21 @@
 .landing-section {
-  width: 67%;
+  height: 80vh;
+  width: 67vw;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
   padding: 4px 8px;
   border-radius: 12px;
+
+  .landing-text {
+    min-width: 52ch;
+  }
+
+  .profile-section {
+    justify-self: end;
+  }
 }
 
 h2 {

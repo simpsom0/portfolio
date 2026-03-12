@@ -5,6 +5,7 @@ import Typewriter, {
 import './landing-section.scss';
 import { useMemo, useReducer } from 'react';
 import { HeadingLevel } from '@/types/heading-level';
+import ProfileCard from '../profile-card/profile-card';
 
 type LandingAction =
   | { type: 'COMPLETE_GREETING' }
@@ -88,9 +89,14 @@ function LandingSection() {
 
   return (
     <div className="landing-section">
-      <Typewriter state={state.greeting} onComplete={callbacks.greeting} />
-      <Typewriter state={state.name} onComplete={callbacks.name} />
-      <Typewriter state={state.hook} onComplete={callbacks.hook} />
+      <div className="landing-text">
+        <Typewriter state={state.greeting} onComplete={callbacks.greeting} />
+        <Typewriter state={state.name} onComplete={callbacks.name} />
+        <Typewriter state={state.hook} onComplete={callbacks.hook} />
+      </div>
+      <div className="profile-section">
+        <ProfileCard />
+      </div>
     </div>
   );
 }
