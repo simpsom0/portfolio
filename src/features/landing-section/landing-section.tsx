@@ -94,7 +94,7 @@ function LandingSection() {
         <Typewriter state={state.name} onComplete={callbacks.name} />
         <Typewriter state={state.hook} onComplete={callbacks.hook} />
       </div>
-      <div className="profile-section">
+      <div className="profile-section fade-in">
         <ProfileCard />
       </div>
     </div>

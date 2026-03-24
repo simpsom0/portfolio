@@ -5,8 +5,24 @@ import ThemeButton from '@/components/theme-button/theme-button';
 import Experience from '@/features/experience-section/experience-section';
 import { GithubIcon } from '@/types/icons/svgs/etc/github';
 import { LinkedinIcon } from '@/types/icons/svgs/etc/linkedin';
+import { useEffect, useRef, useState } from 'react';
 
 function App() {
+  const [experienceClasses, setExperienceClasses] = useState([
+    'faded-out',
+    'experience-container',
+  ]);
+  const hasAddedFadeIn = useRef(false);
+
+  useEffect(() => {
+    if (hasAddedFadeIn.current) return;
+
+    setTimeout(() => {
+      setExperienceClasses(['experience-container', 'fade-in']);
+      hasAddedFadeIn.current = true;
+    }, 250);
+  }, [experienceClasses, setExperienceClasses, hasAddedFadeIn]);
+
   return (
     <ThemeProvider>
       {/* header */}
@@ -30,7 +46,7 @@ function App() {
       {/* body */}
       <div className="body-container">
         <LandingSection />
-        <div className="experience-container">
+        <div className={experienceClasses.join(' ')}>
           <h2 className="title">Experience</h2>
           <div className="experience-body">
             <Experience />
