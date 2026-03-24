@@ -20,3 +20,27 @@
     width: 100%;
   }
 }
+
+@media screen and (width <=1050px) {
+  .profile-container {
+    flex-direction: row;
+    max-width: none;
+    width: 75vw;
+
+    .photo {
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media screen and (width <=750px) {
+  .profile-container {
+    flex-direction: column;
+    max-width: none;
+    width: 75vw;
+
+    .photo {
+      margin: 0;
+    }
+  }
+}

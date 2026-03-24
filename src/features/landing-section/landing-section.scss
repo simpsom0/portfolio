@@ -7,11 +7,9 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
-  padding: 4px 8px;
-  border-radius: 12px;
-
   .landing-text {
     min-width: 52ch;
+    margin-right: 3rem;
   }
 
   .profile-section {
@@ -21,4 +19,57 @@
 
 h2 {
   color: var(--accent);
+}
+
+@media screen and (width <=1200px) {
+  .landing-section {
+    width: 100vw;
+
+    .landing-text {
+      margin: 0 3rem;
+    }
+
+    .profile-section {
+      margin-right: 3rem;
+    }
+  }
+}
+
+@media screen and (width <=1050px) {
+  .landing-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .landing-text {
+      margin: 0;
+    }
+
+    .profile-section {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (width<=750px) {
+  .landing-section {
+    height: min-content;
+    margin-bottom: 2rem;
+
+    .landing-text {
+      min-height: 350px;
+      margin-top: 12.5vh;
+    }
+  }
+}
+
+@media screen and (width<=600px) {
+  .landing-section {
+    .landing-text {
+      align-self: flex-start;
+      min-width: 0px;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
 }
