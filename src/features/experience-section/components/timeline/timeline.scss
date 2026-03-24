@@ -32,4 +32,9 @@
       top: 0;
     }
   }
+
+  &.last {
+    border-bottom-left-radius: var(--timeline-width);
+    border-bottom-right-radius: var(--timeline-width);
+  }
 }

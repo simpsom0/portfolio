@@ -37,6 +37,12 @@ h6 {
   justify-content: flex-end;
   align-items: center;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+
   .divider {
     background-color: var(--text-color);
     height: 1.5rem;
@@ -66,4 +72,30 @@ h6 {
       }
     }
   }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+.faded-out {
+  opacity: 0;
 }

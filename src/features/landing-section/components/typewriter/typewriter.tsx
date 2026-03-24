@@ -2,13 +2,7 @@ import './typewriter.scss';
 import { useState, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import Cursor from '@/features/landing-section/components/cursor/cursor';
-
-export const HeadingLevel = {
-  H2: 0,
-  Paragraph: 1,
-  Span: 2,
-} as const;
-export type HeadingLevelType = (typeof HeadingLevel)[keyof typeof HeadingLevel];
+import { type HeadingLevelType, HeadingLevel } from '@/types/heading-level';
 
 export interface TypewriterState {
   text: string;
@@ -63,7 +57,8 @@ function Typewriter({ state, onComplete }: TypewriterProps) {
   const renderContent = () => {
     const content = (
       <>
-        {textVisible}
+        {/* use a non-breaking space to make the empty tags take up space */}
+        {textVisible === '' ? '\u00A0' : textVisible}
         <Cursor
           render={state.isRendering}
           blink={state.isRendered && state.isRendering}
@@ -72,15 +67,15 @@ function Typewriter({ state, onComplete }: TypewriterProps) {
     );
 
     const elementMap: Record<HeadingLevelType, ReactNode> = {
-      [HeadingLevel.H2]: <h2>{content}</h2>,
-      [HeadingLevel.Paragraph]: <p>{content}</p>,
-      [HeadingLevel.Span]: <span>{content}</span>,
+      [HeadingLevel.H2]: <h2 className="h2">{content}</h2>,
+      [HeadingLevel.Paragraph]: <p className="p">{content}</p>,
+      [HeadingLevel.Span]: <span className="span">{content}</span>,
     };
 
     return elementMap[state.headingLevel];
   };
 
-  return <div>{renderContent()}</div>;
+  return renderContent();
 }
 
 export default Typewriter;

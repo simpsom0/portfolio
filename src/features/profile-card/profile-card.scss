@@ -1,0 +1,46 @@
+.profile-container {
+  background-color: var(--card-bg);
+  max-width: 40ch;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .photo {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 10rem;
+    // border: 1px solid var(--bg-color);
+    // box-shadow: 5px 5px 0px 0px var(--accent);
+  }
+
+  .profile-summary {
+    width: 100%;
+  }
+}
+
+@media screen and (width <=1050px) {
+  .profile-container {
+    flex-direction: row;
+    max-width: none;
+    width: 75vw;
+
+    .photo {
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media screen and (width <=750px) {
+  .profile-container {
+    flex-direction: column;
+    max-width: none;
+    width: 75vw;
+
+    .photo {
+      margin: 0;
+    }
+  }
+}
