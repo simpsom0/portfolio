@@ -39,7 +39,9 @@ h6 {
 
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
 
   .divider {
     background-color: var(--text-color);
