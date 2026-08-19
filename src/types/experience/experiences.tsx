@@ -27,33 +27,44 @@ export const experiences: Record<ExperienceEnumType, ExperienceCardState> = {
     ],
     description: (
       <>
+        <strong>
+          Built Data Validation & Remediation Engine | Development Team Lead
+        </strong>
         <ul>
           <li>
-            Develops and supports distributed systems in targeted ad pipeline
-            ranging from order placement and algorithmic allocation of ads, to
-            billing and post-campaign analytics
+            Led team in building internal pipeline to aggregate data across
+            multiple distributed systems.
           </li>
           <li>
-            Leads incident calls and RCA to resolve revenue impacting technical
-            bugs
+            Solution provided UI and APIs to resolve data discrepancies and
+            monitor data ingestion quality.
+          </li>
+          <li>Reduced data-related support ticket resolution time by 80%.</li>
+        </ul>
+        <strong>
+          Created Reusable RBAC Authentication Components | Feature Lead
+        </strong>
+        <ul>
+          <li>
+            Collaborated with multiple development teams and POs to define
+            requirements.
           </li>
           <li>
-            Collaborates with multiple development teams to deliver reliable
-            updates in distributed data pipelines
+            Developed secure front-end and back-end building blocks to integrate
+            authentication into cloud resources.
           </li>
         </ul>
-
-        <p>Notable Accomplishments</p>
+        <strong>Notable Accomplishments:</strong>
         <ul>
-          <li>Optimized future spending by 7+ million dollars per year</li>
-          <li>Increased API response time by 92%</li>
+          <li>Optimized future spending by 7+ million dollars per year.</li>
+          <li>Decreased API response time by 400x.</li>
           <li>
-            Built RBAC hosting platform to enable standardized internal tool
-            development
+            Led incident and RCA calls to resolve revenue impacting technical
+            bugs.
           </li>
           <li>
-            Built internal tool to aggregate data across multiple data sources
-            to reduce troubleshooting time for bugs
+            Provided timely bug fixes and updates for 20+ codebases of various
+            languages.
           </li>
         </ul>
       </>
@@ -73,18 +84,17 @@ export const experiences: Record<ExperienceEnumType, ExperienceCardState> = {
       IconKey.Git,
     ],
     description: (
-      <ul>
-        <li>
-          Developed and maintained medical website for over 5,000 patients
-          across eight offices
-        </li>
-        <li>
-          Implemented website features that maintain patient records,
-          procedures, and doctors’ notes, schedule appointments, upload scans,
-          order medications, and export patient data
-        </li>
-        <li>Complied with HIPAA standards throughout development</li>
-      </ul>
+      <>
+        <strong>Created Audit Page for Patient Records | Feature Lead</strong>
+        <ul>
+          <li>Collaborated with PO to scope and refine requirements.</li>
+          <li>
+            Developed a patient audit page with algorithmic prioritization, UI
+            indicators, and ability to update data.
+          </li>
+          <li>Complied with HIPAA standards throughout development.</li>
+        </ul>
+      </>
     ),
   },
   [ExperienceEnum.Clarkson]: {
